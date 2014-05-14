@@ -22,7 +22,6 @@ class auth_pld extends auth_plain {
      * Carry out sanity checks to ensure the object is
      * able to operate. Set capabilities.
      *
-     * @author  Christopher Smith <chris@jalakai.co.uk>
      */
     function __construct() {
         if (!@is_readable(AUTH_USERFILE)){
@@ -42,8 +41,6 @@ class auth_pld extends auth_plain {
      * mail string  email addres of the user
      * grps array   list of groups the user is in
      *
-     * @author  Andreas Gohr <andi@splitbrain.org>
-     * @author  Elan Ruusamäe <glen@pld-linux.org>
      */
     function getUserData($user){
         if ($this->users === null) {
@@ -58,8 +55,6 @@ class auth_pld extends auth_plain {
      *
      * loads the user file into a datastructure
      *
-     * @author  Andreas Gohr <andi@splitbrain.org>
-     * @author  Elan Ruusamäe <glen@pld-linux.org>
      */
     private function _loadUserFile(){
         $this->users = array();
