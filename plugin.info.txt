@@ -1,0 +1,7 @@
+base   authpld
+author Elan Ruusamäe
+email  glen@delfi.ee
+date   2014-05-15
+name   pld auth plugin
+desc   Provides authentication against PLD user database
+url    https://github.com/glensc/dokuwiki-auth-pld

@@ -13,17 +13,16 @@ define('AUTH_INFOFILE', DOKU_CONF.'/pld/users');
 // manually modified
 define('AUTH_GROUPFILE', DOKU_CONF.'/pld/groups');
 
-require_once 'plain.class.php';
-
-class auth_pld extends auth_plain {
+class auth_plugin_authpld extends auth_plugin_authplain {
     /**
      * Constructor
      *
      * Carry out sanity checks to ensure the object is
      * able to operate. Set capabilities.
-     *
      */
-    function __construct() {
+    public function __construct() {
+        // NOTE: not calling parent, as don't want to inherit constructor
+
         if (!@is_readable(AUTH_USERFILE)){
             $this->success = false;
         }else{
@@ -31,6 +30,7 @@ class auth_pld extends auth_plain {
             $this->cando['getUserCount'] = true;
         }
     }
+
     /**
      * Return user info
      *
@@ -42,7 +42,7 @@ class auth_pld extends auth_plain {
      * grps array   list of groups the user is in
      *
      */
-    function getUserData($user){
+    public function getUserData($user){
         if ($this->users === null) {
             $this->_loadUserFile();
         }
